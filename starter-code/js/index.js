@@ -17,24 +17,12 @@ function getTotalPrice() {
     for (var i=0; i< document.querySelectorAll(".product").length; i++) {
       var price = document.querySelectorAll(".price")[i].innerHTML;
       var quantity = document.querySelectorAll(".quantity")[i].value;
-      var total = price[i] * quantity[i];
+      var total = price * quantity;
       sumPrice += total
-      document.querySelectorAll(".subTotal-price")[i].innerHTML = "$ " + total;
+      document.querySelectorAll(".subTotal-price")[i].innerHTML = "$ " + total;      
     }
- }  
-
-  // var price = document.getElementsByClassName("price");
-  //   for(i=0; i<price.length;i++) {
-  //     var productPrice = price[i].innerHTML;
-  //   }
-
-
-  // var quantity = document.getElementsByClassName("quantity");
-  //   for(i=0; i<quantity.length;i++) {
-  //     var quantityProduct = quantity[i].innerHTML;
-  //   }
-
-
+    document.querySelector(".TotalPrice").innerHTML = "Total Price: " + sumPrice + "$";
+}  
 
 
 
